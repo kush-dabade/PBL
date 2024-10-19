@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>COINWAVE</title>
+    <link rel="icon" type="image/x-icon" href="wave.png">
+</head>
+<body>
+    <header>
+        <h1><a href="home.html">COINWAVE</a></h1>
+        <div class="header-buttons">
+            <button id="cartButton">🛒</button>
+            <button id="darkModeToggle">🌙</button>
+        </div>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="ourstory.html">Our Story</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <nav class="sidebar">
+        <div class="sidebar-top">
+            <ul>
+                <li><a href="#"><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=035" class="crypto-icon" alt="Bitcoin Logo"> <span class="label">Bitcoin</span></a></li>
+                <li><a href="#"><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=035" class="crypto-icon" alt="Ethereum Logo"> <span class="label">Ethereum</span></a></li>
+                <li><a href="#"><img src="https://cryptologos.cc/logos/litecoin-ltc-logo.png?v=035" class="crypto-icon" alt="Litecoin Logo"> <span class="label">Litecoin</span></a></li>
+                <li><a href="#"><img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png?v=035" class="crypto-icon" alt="Dogecoin Logo"> <span class="label">Dogecoin</span></a></li>
+                <li><a href="#"><img src="https://cryptologos.cc/logos/sui-sui-logo.png?v=035" class="crypto-icon" alt="Ripple Logo"> <span class="label">Ripple</span></a></li>
+                <!--    <li><a href="#"><img src="compare.png" class="crypto-icon" alt="Compare Icon"> <span class="label">Compare</span></a></li> -->
+            </ul>
+        </div>
+        <div class="sidebar-bottom">
+            <a href="#" class="icon-button"><img src="user.png" class="icon" alt="Profile Icon"> <span class="label">Profile</span></a>
+            <a href="#" class="icon-button"><img src="settings.png" class="icon" alt="Settings Icon"> <span class="label">Settings</span></a>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="chart-container" id="chart">
+            <canvas id="cryptoChart"></canvas>
+        </div>
+        <div class="price-display">
+            <div>Price: <span id="price">$42,000</span></div>
+            <div>Market Cap: <span id="marketCap">$800 billion</span></div>
+            <div>24h Change: <span id="change">0%</span></div>
+               <select id="cryptoName">
+                <option value="" disabled selected>Crypto Currencies</option>
+                <option value="bitcoin">Bitcoin</option>
+                <option value="ethereum">Ethereum</option>
+                <option value="litecoin">Litecoin</option>
+                <option value="dogecoin">Dogecoin</option>
+                <option value="ripple">Ripple</option>
+            </select>
+            <br>        
+            <input type="number" id="cryptoQuantity" placeholder="Quantity">
+            <br>
+            <button id="addCrypto">Buy</button>
+            <button id="removeCrypto">Sell</button>
+            <div class="cart-dropdown">
+                <div class="cart-items"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

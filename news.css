@@ -1,0 +1,209 @@
+/* Base styles */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #181818;
+    color: #e0e0e0;
+}
+
+/* Header styles */
+header {
+    opacity: 1.;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #007bff;
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+
+header h1 {
+    letter-spacing: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    flex: 1;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    margin-top: 60px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 0px 20px;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 8px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar li {
+    margin-left: 25px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+/* News Container Styles */
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+/* News Item Styles */
+.news-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    overflow: hidden;
+    width: calc(33% - 40px); /* 3 items per row with margin */
+    position: relative;
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+}
+
+.news-item .content {
+    padding: 15px;
+}
+
+.news-item h2 {
+    font-size: 1.1em;
+    margin: 0 0 10px;
+}
+
+.news-item p {
+    margin: 0;
+}
+
+/* Pagination Styles */
+.pagination-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Dark Mode Styles */
+body.dark-mode header {
+    background-color: #222;
+    color: #ffffff;
+}
+
+body.dark-mode .navbar {
+    background-color: #2c2c2c;
+}
+
+body.dark-mode .news-item {
+    background-color: #2c2c2c;
+    color: #ffffff;
+}
+
+body.dark-mode .news-item h2 {
+    color: #ffffff;
+}
+
+/* Additional styles for buttons, etc. can be added here */
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.news-item {
+    background-color: #ffffff; /* Use a dark background */
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px; /* Set a fixed width */
+    position: relative; /* For button positioning */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.news-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.news-title {
+    font-size: 1.2rem;
+    color: white;
+    margin: 10px 0;
+}
+
+.news-description {
+    font-size: 0.9rem;
+    color: #ccc; /* Lighter text for contrast */
+    margin-bottom: 40px; /* Add space for the button */
+}
+
+.read-more {
+    position: absolute; /* Absolute position for bottom alignment */
+    bottom: 20px; /* Distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button */
+    background-color: #007bff; /* Button background */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.read-more:hover {
+    background-color: #0056b3; /* Darker on hover */
+}
+
+.news-description {
+    font-size: 0.9rem;
+    color: transparent; /* Make text color transparent */
+    background: linear-gradient(white, transparent); /* Gradient effect */
+    -webkit-background-clip: text; /* For text clipping in WebKit browsers */
+    background-clip: text; /* Clip the background to the text */
+    margin-bottom: 40px; /* Add space for the button */
+}
+a {
+    text-decoration: none; /* Removes underline */
+    color: #ffffff; /* Default link color */
+}
