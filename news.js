@@ -1,7 +1,7 @@
 async function fetchNews() {
-    const apiKey = 'd7087682e163490a8a7e113dc592d57b';
-    const url = `https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=${apiKey}`;
-    
+    const apiKey = '9646d0642f782e763739ead7babad7c8'; // GNews API key
+    const url = `https://gnews.io/api/v4/search?q=cryptocurrency&token=${apiKey}&lang=en&max=9`;
+
     try {
         const response = await fetch(url);
         const data = await response.json();
@@ -13,12 +13,12 @@ async function fetchNews() {
 
         data.articles.forEach(article => {
             // Check if the article has an image and limit to 9 articles
-            if (article.urlToImage && displayedArticlesCount < 9) {
+            if (article.image && displayedArticlesCount < 9) {
                 const articleElement = document.createElement('div');
                 articleElement.classList.add('news-item');
 
                 articleElement.innerHTML = `
-                    <img src="${article.urlToImage}" alt="${article.title}" />
+                    <img src="${article.image}" alt="${article.title}" />
                     <div class="content">
                         <h2>${article.title}</h2>
                         <p class="news-description">${article.description || ''}</p>
