@@ -6,34 +6,42 @@ async function fetchNews() {
         const response = await fetch(url);
         const data = await response.json();
 
+        // Log the entire response to check structure
+        console.log(data);
+
         const articlesContainer = document.getElementById('newsContainer');
         articlesContainer.innerHTML = ''; // Clear previous articles
 
-        let displayedArticlesCount = 0; // Counter for displayed articles
+        if (data.articles) { // Check if articles exist in the response
+            let displayedArticlesCount = 0; // Counter for displayed articles
 
-        data.articles.forEach(article => {
-            // Check if the article has an image and limit to 9 articles
-            if (article.image && displayedArticlesCount < 9) {
-                const articleElement = document.createElement('div');
-                articleElement.classList.add('news-item');
+            data.articles.forEach(article => {
+                // Check if the article has an image and limit to 9 articles
+                if (article.image && displayedArticlesCount < 9) {
+                    const articleElement = document.createElement('div');
+                    articleElement.classList.add('news-item');
 
-                articleElement.innerHTML = `
-                    <img src="${article.image}" alt="${article.title}" />
-                    <div class="content">
-                        <h2>${article.title}</h2>
-                        <p class="news-description">${article.description || ''}</p>
-                        <a href="${article.url}" target="_blank" class="read-more">Read more</a>
-                    </div>
-                `;
+                    articleElement.innerHTML = `
+                        <img src="${article.image}" alt="${article.title}" />
+                        <div class="content">
+                            <h2>${article.title}</h2>
+                            <p class="news-description">${article.description || ''}</p>
+                            <a href="${article.url}" target="_blank" class="read-more">Read more</a>
+                        </div>
+                    `;
 
-                articlesContainer.appendChild(articleElement);
-                displayedArticlesCount++;
+                    articlesContainer.appendChild(articleElement);
+                    displayedArticlesCount++;
+                }
+            });
+
+            // If no articles were displayed, show a message
+            if (articlesContainer.innerHTML === '') {
+                articlesContainer.innerHTML = '<p>No articles available.</p>';
             }
-        });
-
-        // If no articles were displayed, show a message
-        if (articlesContainer.innerHTML === '') {
-            articlesContainer.innerHTML = '<p>No articles available.</p>';
+        } else {
+            console.error("No articles found in the response.");
+            articlesContainer.innerHTML = '<p>Error fetching articles.</p>';
         }
     } catch (error) {
         console.error('Error fetching news:', error);

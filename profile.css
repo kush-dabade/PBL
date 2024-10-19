@@ -1,0 +1,189 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #181818;
+    color: #e0e0e0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding: 20px;
+    background-color: #007bff;
+    color: #fff;
+}
+
+header h1 {
+    letter-spacing: 8px;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.profile-container {
+    height: 220px;
+    display: flex;
+    padding: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allow wrapping to avoid overflow */
+}
+
+.profile-card {
+    display: flex;
+    flex: 0 0 70%; /* 70% width for profile card */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.profile-photo {
+    flex: 0 0 30%; /* 30% width for profile photo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.personal-info {
+    flex: 0 0 70%; /* 70% width for personal info */
+    padding: 0 20px; /* Space between photo and personal info */
+}
+
+.portfolio-info {
+    height: 220px;
+    flex: 0 0 30%; /* 30% width for portfolio info */
+    padding: 20px; /* Add padding to the portfolio info tile */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    min-width: 250px; /* Set a minimum width to prevent overflow */
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.tile {
+    height: 220px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    flex: 1; /* Allow tiles to grow equally */
+}
+
+.portfolio-info h3, .settings-container h3 {
+    margin-top: 0;
+}
+
+.value {
+    font-weight: bold;
+}
+
+.profit {
+    color: #4caf50; /* Green for profit */
+}
+
+.settings-container {
+    margin-top: 40px; /* Space between profile and settings sections */
+}
+
+.settings-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.settings-btn:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: #fff;
+}
+
+body.dark-mode footer {
+    background-color: #2c2c2c;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .tile {
+    background-color: #333;
+}
+
+body.dark-mode .tile h3 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .tile p {
+    color: #bbbbbb;
+}
+.settings-buttons-container {
+    display: flex; /* Use flexbox to arrange buttons in a row */
+    justify-content: space-between; /* Space buttons evenly */
+    margin-top: 20px; /* Space above the buttons */
+    margin-bottom: 10px ;
+}
+
+.settings-btn {
+    flex: 1; /* Allow buttons to grow equally */
+    padding: 12px; /* Increased padding for better touch target */
+    margin: 0 10px; /* Add margin between buttons */
+    border-radius: 8px; /* Slightly rounded corners */
+    color: #fff; /* Text color */
+    font-size: 16px; /* Font size for better readability */
+    font-weight: bold; /* Bold text for emphasis */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.edit-btn {
+    background-color: #007bff; /* Blue for Edit Profile */
+}
+
+.change-password-btn {
+    background-color: #00c241; /* Yellow for Change Password */
+}
+
+.logout-btn {
+    background-color: #dc3545; /* Red for Logout */
+}
+
+.settings-btn:hover {
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.settings-btn:active {
+    transform: translateY(0); /* Reset the lift effect */
+}
+
+h3{
+    margin-left: 15px;
+}
+a {
+    text-decoration: none; /* Removes underline */
+    color: #ffffff; /* Default link color */
+}
