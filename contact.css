@@ -14,13 +14,13 @@ body.dark-mode {
 
 header {
     display: flex;
-    justify-content: center; /* Center content horizontally */
+    justify-content: center;
     align-items: center;
     height: 100px;
     padding: 20px;
     background-color: #007bff !important;
     color: #fff;
-    position: relative; /* Allows the button to be positioned relative to header */
+    position: relative;
 }
 
 a{
@@ -33,27 +33,27 @@ header h1 {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    flex-grow: 1; /* Ensures the h1 takes up available space for centering */
+    flex-grow: 1;
 }
 
 .header-buttons {
     position: absolute;
-    right: 20px; /* Moves the button to the right of the header */
+    right: 20px;
 }
 
-/* Dark mode button styles */
+
 .header-buttons button {
-    margin: 0 5px; /* Adds space between the buttons */
-    padding: 10px; /* Adjusts padding */
-    border: none; /* Removes default border */
-    border-radius: 5px; /* Rounded corners */
-    background-color: #ffffff; /* Button color */
-    color: #007bff; /* Text color */
-    transition: background-color 0.3s ease; /* Transition effect */
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #007bff;
+    transition: background-color 0.3s ease;
 }
 
 .header-buttons button:hover {
-    background-color: #e0e0e0; /* Change color on hover */
+    background-color: #e0e0e0;
 }
 
 .navbar {
@@ -134,8 +134,8 @@ body.dark-mode .hero {
 
 .tile-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
-    gap: 20px; /* Gap between the tiles */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     padding: 20px;
 }
 

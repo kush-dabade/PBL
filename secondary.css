@@ -14,13 +14,13 @@ body.dark-mode {
 
 header {
     display: flex;
-    justify-content: center; /* Center content horizontally */
+    justify-content: center;
     align-items: center;
     height: 100px;
     padding: 20px;
     background-color: #007bff !important;
     color: #fff;
-    position: relative; /* Allows the button to be positioned relative to header */
+    position: relative;
 }
 
 header h1 {
@@ -28,31 +28,31 @@ header h1 {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    flex-grow: 1; /* Ensures the h1 takes up available space for centering */
+    flex-grow: 1;
 }
 
 .header-buttons {
     position: absolute;
-    right: 20px; /* Moves the button to the right of the header */
+    right: 20px;
 }
 
-/* Dark mode button styles */
+
 .header-buttons button {
-    margin: 0 5px; /* Adds space between the buttons */
-    padding: 10px; /* Adjusts padding */
-    border: none; /* Removes default border */
-    border-radius: 5px; /* Rounded corners */
-    background-color: #ffffff; /* Button color */
-    color: #007bff; /* Text color */
-    transition: background-color 0.3s ease; /* Transition effect */
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #007bff;
+    transition: background-color 0.3s ease;
 }
 
 .header-buttons button:hover {
-    background-color: #e0e0e0; /* Change color on hover */
+    background-color: #e0e0e0;
 }
 a {
-    text-decoration: none; /* Removes underline */
-    color: #ffffff; /* Default link color */
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .navbar {
@@ -154,8 +154,8 @@ body.dark-mode .btn {
 
 .tile-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
-    gap: 20px; /* Gap between the tiles */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     padding: 20px;
 }
 
@@ -235,7 +235,7 @@ body.dark-mode footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 10px;
     text-align: center;
-    flex: 1 1 200px; /* Adjusts flex-grow and flex-basis */
+    flex: 1 1 200px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -281,30 +281,30 @@ body.dark-mode .technologies li {
 }
 
 .technology-tiles {
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center tiles horizontally */
-    flex-wrap: wrap; /* Allow tiles to wrap to the next line */
-    gap: 20px; /* Gap between the tiles */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
     padding: 20px;
 }
 
 .technology-tile {
-    background-color: #ffffff; /* Tile background color */
+    background-color: #ffffff;
     padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
-    text-align: center; /* Center text */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effect */
-    width: 150px; /* Fixed width for consistent sizing */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 150px;
 }
 
 .technology-tile:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deepen shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .tech-logo {
-    width: 50px; /* Logo size */
-    height: 50px; /* Logo size */
-    margin-bottom: 10px; /* Space between logo and text */
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
 }

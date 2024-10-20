@@ -108,6 +108,6 @@ footer {
     margin-top: 50px;
 }
 a {
-    text-decoration: none; /* Removes underline */
-    color: #ffffff; /* Default link color */
+    text-decoration: none; 
+    color: #ffffff;
 }

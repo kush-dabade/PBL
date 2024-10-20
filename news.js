@@ -1,22 +1,21 @@
 async function fetchNews() {
-    const apiKey = '9646d0642f782e763739ead7babad7c8'; // GNews API key
+    const apiKey = '9646d0642f782e763739ead7babad7c8';
     const url = `https://gnews.io/api/v4/search?q=cryptocurrency&token=${apiKey}&lang=en&max=9`;
 
     try {
         const response = await fetch(url);
         const data = await response.json();
 
-        // Log the entire response to check structure
         console.log(data);
 
         const articlesContainer = document.getElementById('newsContainer');
-        articlesContainer.innerHTML = ''; // Clear previous articles
+        articlesContainer.innerHTML = '';
 
-        if (data.articles) { // Check if articles exist in the response
-            let displayedArticlesCount = 0; // Counter for displayed articles
+        if (data.articles) {
+            let displayedArticlesCount = 0;
 
             data.articles.forEach(article => {
-                // Check if the article has an image and limit to 9 articles
+                
                 if (article.image && displayedArticlesCount < 9) {
                     const articleElement = document.createElement('div');
                     articleElement.classList.add('news-item');
@@ -35,7 +34,6 @@ async function fetchNews() {
                 }
             });
 
-            // If no articles were displayed, show a message
             if (articlesContainer.innerHTML === '') {
                 articlesContainer.innerHTML = '<p>No articles available.</p>';
             }
@@ -48,5 +46,4 @@ async function fetchNews() {
     }
 }
 
-// Call the function to fetch news when the page loads
 fetchNews();

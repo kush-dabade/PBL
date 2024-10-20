@@ -35,34 +35,34 @@ header h1 {
     display: flex;
     padding: 40px;
     align-items: flex-start;
-    flex-wrap: wrap; /* Allow wrapping to avoid overflow */
+    flex-wrap: wrap;
 }
 
 .profile-card {
     display: flex;
-    flex: 0 0 70%; /* 70% width for profile card */
+    flex: 0 0 70%;
     padding: 20px;
-    box-sizing: border-box; /* Include padding in width */
+    box-sizing: border-box;
 }
 
 .profile-photo {
-    flex: 0 0 30%; /* 30% width for profile photo */
+    flex: 0 0 30%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .personal-info {
-    flex: 0 0 70%; /* 70% width for personal info */
-    padding: 0 20px; /* Space between photo and personal info */
+    flex: 0 0 70%;
+    padding: 0 20px;
 }
 
 .portfolio-info {
     height: 220px;
-    flex: 0 0 30%; /* 30% width for portfolio info */
-    padding: 20px; /* Add padding to the portfolio info tile */
-    box-sizing: border-box; /* Ensure padding is included in width calculation */
-    min-width: 250px; /* Set a minimum width to prevent overflow */
+    flex: 0 0 30%;
+    padding: 20px;
+    box-sizing: border-box;
+    min-width: 250px;
 }
 
 .profile-img {
@@ -79,7 +79,7 @@ header h1 {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
-    flex: 1; /* Allow tiles to grow equally */
+    flex: 1;
 }
 
 .portfolio-info h3, .settings-container h3 {
@@ -91,11 +91,11 @@ header h1 {
 }
 
 .profit {
-    color: #4caf50; /* Green for profit */
+    color: #4caf50;
 }
 
 .settings-container {
-    margin-top: 40px; /* Space between profile and settings sections */
+    margin-top: 40px;
 }
 
 .settings-btn {
@@ -141,49 +141,49 @@ body.dark-mode .tile p {
     color: #bbbbbb;
 }
 .settings-buttons-container {
-    display: flex; /* Use flexbox to arrange buttons in a row */
-    justify-content: space-between; /* Space buttons evenly */
-    margin-top: 20px; /* Space above the buttons */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
     margin-bottom: 10px ;
 }
 
 .settings-btn {
-    flex: 1; /* Allow buttons to grow equally */
-    padding: 12px; /* Increased padding for better touch target */
-    margin: 0 10px; /* Add margin between buttons */
-    border-radius: 8px; /* Slightly rounded corners */
-    color: #fff; /* Text color */
-    font-size: 16px; /* Font size for better readability */
-    font-weight: bold; /* Bold text for emphasis */
-    border: none; /* Remove default border */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+    flex: 1;
+    padding: 12px;
+    margin: 0 10px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .edit-btn {
-    background-color: #007bff; /* Blue for Edit Profile */
+    background-color: #007bff;
 }
 
 .change-password-btn {
-    background-color: #00c241; /* Yellow for Change Password */
+    background-color: #00c241;
 }
 
 .logout-btn {
-    background-color: #dc3545; /* Red for Logout */
+    background-color: #dc3545;
 }
 
 .settings-btn:hover {
-    transform: translateY(-2px); /* Slight lift effect on hover */
+    transform: translateY(-2px);
 }
 
 .settings-btn:active {
-    transform: translateY(0); /* Reset the lift effect */
+    transform: translateY(0);
 }
 
 h3{
     margin-left: 15px;
 }
 a {
-    text-decoration: none; /* Removes underline */
-    color: #ffffff; /* Default link color */
+    text-decoration: none;
+    color: #ffffff;
 }

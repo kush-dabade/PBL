@@ -1,26 +1,22 @@
-// Initial setup
 let isDarkMode = false;
 
-// Dark/Light mode toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
 darkModeToggle.addEventListener('click', () => {
     isDarkMode = !isDarkMode;
     document.body.classList.toggle('dark-mode', isDarkMode);
 });
 
-// Cart functionality
 const cartButton = document.getElementById('cartButton');
 const cartDropdown = document.querySelector('.cart-dropdown');
 
 cartButton.addEventListener('mouseenter', () => {
-    cartDropdown.classList.add('show'); // Show cart on hover
+    cartDropdown.classList.add('show');
 });
 
 cartButton.addEventListener('mouseleave', () => {
-    cartDropdown.classList.remove('show'); // Hide cart when not hovering
+    cartDropdown.classList.remove('show');
 });
 
-// Buy and Sell functionality
 const addCryptoButton = document.getElementById('addCrypto');
 const removeCryptoButton = document.getElementById('removeCrypto');
 const cryptoQuantityInput = document.getElementById('cryptoQuantity');
@@ -62,7 +58,6 @@ removeCryptoButton.addEventListener('click', () => {
     }
 });
 
-// Removing cart item functionality
 cartItemsContainer.addEventListener('click', (event) => {
     if (event.target.classList.contains('remove-item')) {
         const item = event.target.closest('.cart-item');
@@ -82,84 +77,82 @@ function formatToINR(value) {
     return '₹' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-// Chart.js configuration
 const ctx = document.getElementById('cryptoChart').getContext('2d');
 
-// Create a gradient fill for the chart
-const gradientFill = ctx.createLinearGradient(0, 0, 0, 400); // Adjust based on your chart size
+const gradientFill = ctx.createLinearGradient(0, 0, 0, 400);
 gradientFill.addColorStop(0, 'rgba(75, 192, 192, 0.6)');
 gradientFill.addColorStop(1, 'rgba(75, 192, 192, 0.1)');
 
 let cryptoChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: [], // X-axis labels (dates)
+        labels: [],
         datasets: [{
             label: 'Price',
-            data: [], // Price data
-            borderColor: 'rgba(75, 192, 192, 1)', // Line color
-            borderWidth: 2, // Line thickness
-            backgroundColor: gradientFill, // Use gradient fill
-            fill: true, // Fill the area under the line
-            tension: 0, // No curve, making it look more like a financial chart
-            pointRadius: 0, // Hide points for a cleaner look
-            borderDash: [5, 5], // Dashed line style for a financial look
+            data: [],
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 2,
+            backgroundColor: gradientFill,
+            fill: true,
+            tension: 0,
+            pointRadius: 0,
+            borderDash: [5, 5],
         }]
     },
     options: {
         responsive: true,
-        maintainAspectRatio: false, // Stretch chart to fit container
+        maintainAspectRatio: false,
         scales: {
             x: {
-                title: { display: true, text: 'Date' }, // X-axis title
+                title: { display: true, text: 'Date' },
                 ticks: {
                     autoSkip: true,
-                    maxTicksLimit: 10 // Show a maximum of 10 ticks
+                    maxTicksLimit: 30
                 },
                 grid: {
                     display: true,
-                    color: '#444', // Darker grid color for contrast
-                    lineWidth: 1 // Thicker grid lines
+                    color: '#444', 
+                    lineWidth: 0.5
                 }
             },
             y: {
-                title: { display: true, text: 'Price (INR)' }, // Y-axis title
+                title: { display: true, text: 'Price (INR)' }, 
                 beginAtZero: false,
                 ticks: {
                     callback: function(value) {
-                        return formatToINR(value); // Format Y-axis labels
+                        return formatToINR(value); 
                     }
                 },
                 grid: {
                     display: true,
-                    color: '#444', // Darker grid color for contrast
-                    lineWidth: 1 // Thicker grid lines
+                    color: '#444',
+                    lineWidth: 0.5
                 }
             }
         },
         interaction: {
-            mode: 'nearest', // Shows tooltip for the nearest point
-            intersect: false // Shows tooltip even when hovering between points
+            mode: 'nearest', 
+            intersect: false
         },
         plugins: {
             legend: {
                 labels: {
-                    color: '#fff', // Legend text color
+                    color: '#fff',
                     font: {
-                        size: 14, // Font size
+                        size: 14,
                         family: 'Arial',
                         style: 'italic'
                     }
                 }
             },
             tooltip: {
-                backgroundColor: 'rgba(0,0,0,0.8)', // Darker tooltip background color
-                titleFont: { size: 16, weight: 'bold' }, // Tooltip title font
-                bodyFont: { size: 14 }, // Tooltip body font
-                displayColors: true, // Show color box
+                backgroundColor: 'rgba(0,0,0,0.8)',
+                titleFont: { size: 16, weight: 'bold' },
+                bodyFont: { size: 14 },
+                displayColors: true,
                 callbacks: {
                     label: function(context) {
-                        return formatToINR(context.parsed.y); // Format Y-value in tooltip
+                        return formatToINR(context.parsed.y);
                     }
                 }
             }
@@ -167,10 +160,8 @@ let cryptoChart = new Chart(ctx, {
     }
 });
 
-// Fetch and display chart data for the selected cryptocurrency
 async function fetchCryptoPriceData(cryptoId) {
     try {
-        // Fetch data for the last 30 days and current data
         const [marketChartResponse, marketDataResponse] = await Promise.all([
             fetch(`https://api.coingecko.com/api/v3/coins/${cryptoId}/market_chart?vs_currency=inr&days=30&interval=daily`),
             fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&ids=${cryptoId}`)
@@ -179,13 +170,11 @@ async function fetchCryptoPriceData(cryptoId) {
         const marketChartData = await marketChartResponse.json();
         const marketData = await marketDataResponse.json();
         
-        // 24-hour percentage change
         const change24h = marketData[0].price_change_percentage_24h;
 
-        // Update the 24h change display
         document.getElementById('change').textContent = `${change24h.toFixed(2)}%`;
 
-        return marketChartData.prices; // Prices is an array with [timestamp, price] format
+        return marketChartData.prices;
     } catch (error) {
         console.error('Error fetching crypto data:', error);
         return null;
@@ -200,28 +189,24 @@ function updateCryptoChart(prices) {
     cryptoChart.data.datasets[0].data = data;
     cryptoChart.update();
 
-    // Update price display
-    const latestPrice = data[data.length - 1]; // Get the latest price
-    const formattedPrice = formatToINR(latestPrice); // Format the latest price
+    const latestPrice = data[data.length - 1];
+    const formattedPrice = formatToINR(latestPrice);
 
-    // Set a maximum length for the displayed price
-    const maxLength = 10; // Set your desired maximum length here
+    const maxLength = 10;
     const truncatedPrice = formattedPrice.length > maxLength ? formattedPrice.substring(0, maxLength) : formattedPrice;
 
-    document.getElementById('price').textContent = truncatedPrice; // Update price display
+    document.getElementById('price').textContent = truncatedPrice;
 
-    // Update market cap display
-    const marketCap = latestPrice * 1000000; // Assuming market cap is some function of latest price; update as necessary
+    const marketCap = latestPrice * 1000000;
     const formattedMarketCap = formatToINR(marketCap);
-    document.getElementById('marketCap').textContent = formattedMarketCap; // Update market cap display
+    document.getElementById('marketCap').textContent = formattedMarketCap; 
 }
 
-// Listen for clicks on sidebar cryptocurrency options and update chart
 const sidebarItems = document.querySelectorAll('.sidebar-top ul li a');
 sidebarItems.forEach(item => {
     item.addEventListener('click', async (event) => {
         event.preventDefault();
-        const cryptoName = item.querySelector('.label').textContent.toLowerCase(); // Get the cryptocurrency name
+        const cryptoName = item.querySelector('.label').textContent.toLowerCase(); 
 
         const cryptoId = {
             bitcoin: 'bitcoin',
@@ -229,7 +214,7 @@ sidebarItems.forEach(item => {
             litecoin: 'litecoin',
             dogecoin: 'dogecoin',
             ripple: 'ripple'
-        }[cryptoName]; // Map the sidebar labels to CoinGecko API IDs
+        }[cryptoName];
 
         if (cryptoId) {
             const prices = await fetchCryptoPriceData(cryptoId);
@@ -240,16 +225,12 @@ sidebarItems.forEach(item => {
     });
 });
 
-// Compare functionality
-const compareButton = document.querySelector('.sidebar-top ul li a:last-child'); // Select the compare link
-
+const compareButton = document.querySelector('.sidebar-top ul li a:last-child'); 
 compareButton.addEventListener('click', async (event) => {
-    event.preventDefault(); // Prevent default link behavior
+    event.preventDefault();
 
-    // Get the selected cryptocurrencies (you can also use prompts or any other method to get user input)
-    const cryptoId1 = 'bitcoin'; // Replace with the actual selected ID from the UI
-    const cryptoId2 = 'ethereum'; // Replace with the actual selected ID from the UI
-
+    const cryptoId1 = 'bitcoin';
+    const cryptoId2 = 'ethereum';
     const prices1 = await fetchCryptoPriceData(cryptoId1);
     const prices2 = await fetchCryptoPriceData(cryptoId2);
 
@@ -263,7 +244,6 @@ function updateComparisonChart(prices1, prices2) {
     const data1 = prices1.map(price => price[1]);
     const data2 = prices2.map(price => price[1]);
 
-    // Create or update the comparison chart
     const comparisonCtx = document.getElementById('comparisonChart').getContext('2d');
     let comparisonChart = new Chart(comparisonCtx, {
         type: 'line',
@@ -296,7 +276,7 @@ function updateComparisonChart(prices1, prices2) {
                     title: { display: true, text: 'Price (INR)' },
                     ticks: {
                         callback: function(value) {
-                            return formatToINR(value); // Format Y-axis labels
+                            return formatToINR(value); 
                         }
                     }
                 }
@@ -305,9 +285,9 @@ function updateComparisonChart(prices1, prices2) {
     });
 }
 
-// Initial fetch to display Bitcoin prices on page load
 fetchCryptoPriceData('bitcoin').then(prices => {
     if (prices) {
         updateCryptoChart(prices);
     }
 });
+

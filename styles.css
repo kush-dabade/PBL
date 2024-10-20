@@ -1,36 +1,34 @@
-/* Base styles */
-
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* Default to light mode */
-    color: #333; /* Default text color for light mode */
+    background-color: #f0f0f0;
+    color: #333; 
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark Mode */
+
 body.dark-mode {
-    background-color: #181818; /* Dark background for dark mode */
-    color: #e0e0e0; /* Light text color for dark mode */
+    background-color: #181818;
+    color: #e0e0e0;
 }
 
-/* Header styles */
+
 header {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Center items vertically */
-    position: fixed; /* Fix the header at the top */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Full width */
-    height: 60px; /* Set a specific height for the header */
-    background-color: #007bff; /* Header color */
-    color: #ffffff; /* Dark text color */
+    width: 100%;
+    height: 60px;
+    background-color: #007bff;
+    color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Ensure it stays above other elements */
-    overflow: hidden; /* Prevent overflow */
+    z-index: 1000;
+    overflow: hidden;
 }
 
 header h1 {
@@ -41,24 +39,24 @@ header h1 {
     flex: 1;
 }
 
-/* Sidebar Styles */
+
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 60px; /* Initial width */
-    height: calc(100% - 60px); /* Adjusted height */
-    background-color: #ffffff; /* Light sidebar */
-    color: #333; /* Dark text color */
-    padding-top: 70px; /* Push down buttons to avoid header overlap */
-    padding-bottom: 20px; /* Add bottom padding */
+    width: 60px;
+    height: calc(100% - 60px);
+    background-color: #ffffff;
+    color: #333;
+    padding-top: 70px;
+    padding-bottom: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     transition: width 0.3s ease;
     overflow: hidden;
 }
 
 .sidebar:hover {
-    width: 140px; /* Expanded width on hover */
+    width: 140px;
 }
 
 .sidebar ul {
@@ -74,7 +72,7 @@ header h1 {
 }
 
 .sidebar a {
-    color: #333; /* Dark text color */
+    color: #333;
     text-decoration: none;
     font-size: 14px;
     display: flex;
@@ -82,25 +80,25 @@ header h1 {
     padding: 10px;
     border-radius: 8px;
     transition: background-color 0.3s ease;
-    position: relative; /* For positioning the text */
-    white-space: nowrap; /* Prevent text from wrapping */
+    position: relative;
+    white-space: nowrap;
 }
 
 
-/* Hide sidebar labels by default */
+
 .sidebar a span {
-    opacity: 1; /* Initially hidden */
-    transition: opacity 0.3s ease; /* Smooth transition for opacity */
-    margin-left: 10px; /* Space between icon and text */
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    margin-left: 10px;
 }
 
-/* Show sidebar labels on hover */
+
 .sidebar a:hover {
-    background-color: #e0e0e0; /* Light gray on hover */
+    background-color: #e0e0e0;
 }
 
 .sidebar a:hover span {
-    opacity: 1; /* Show text on hover */
+    opacity: 1;
 }
 
 .crypto-icon {
@@ -109,8 +107,8 @@ header h1 {
     margin-right: 12px;
 }
 
-/* Sidebar Bottom Section for Profile and Settings */
-.sidebar-bottom {
+
+.sidebar-bottom  {
     position: absolute;
     bottom: 20px;
     left: 0;
@@ -118,35 +116,59 @@ header h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.sidebar-bottom a {
+    margin: 5px 0;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-bottom a:hover  {
+    background-color: #e0e0e0;
+}
+
+body.dark-mode .sidebar-bottom a:hover {
+    background-color: #444;
 }
 
 
-/* Icon Button Styles */
+
 .icon-button {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #333; /* Dark text color */
+    color: #333;
     text-decoration: none;
     padding: 10px;
     width: 100%;
     transition: background-color 0.3s ease;
-    position: relative; /* For positioning the text */
-    white-space: nowrap; /* Prevent text from wrapping */
+    position: relative;
+    white-space: nowrap;
 }
 
 .icon-button:hover {
     border-radius: 8px;
-    background-color: black; /* Light gray on hover */
+    background-color: black;
 }
 
 .icon {
-    width: 20px;  /* Set a specific width for the icon */
-    height: 20px; /* Set a specific height for the icon */
+    width: 20px; 
+    height: 20px;
 }
 
-/* Main Content Styles */
+
 .main-content {
     margin-top: 5px;
     margin-left: 50px;
@@ -155,36 +177,36 @@ header h1 {
     padding: 20px;
 }
 
-/* Chart Container */
+
 .chart-container {
     border: 1px, solid;
-    width: 75%; /* Adjust width based on sidebar */
+    width: 75%;
     height: 400px;
-    background-color: #ffffff; /* Light background */
-    color: #333; /* Dark text color */
+    background-color: #ffffff;
+    color: #333;
     
     padding: 20px;
 }
 
-/* Price Display */
+
 .price-display {
     border: 1px, solid;
     width: 25%;
     height: 400px;
-    background-color: #ffffff; /* Light background */
+    background-color: #ffffff;
     padding: 20px;
     
     text-align: center;
-    color: #333; /* Dark text color */
+    color: #333;
 }
 
-/* Quantity Management Section */
+
 .quantity-management {
     width: 20%;
-    background-color: #ffffff; /* Light background */
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    color: #333; /* Dark text color */
+    color: #333;
 }
 
 .quantity-controls {
@@ -200,93 +222,93 @@ header h1 {
     border-radius: 5px;
 }
 
-/* Cart Section (small portion under button when items are added) */
+
 .cart-dropdown {
-    display: none; /* Hidden by default */
+    display: none;
 }
 
 .cart-dropdown.show {
-    display: block; /* Show when items are added */
+    display: block;
 }
 
 .cart-items {
-    background-color: #f9f9f9; /* Light background */
-    border: 1px solid #ddd; /* Light border */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
     margin-top: 10px;
     max-height: 150px;
     overflow-y: auto;
-    color: #333; /* Dark text color */
+    color: #333;
 }
 
 .cart-item {
     padding: 5px 0;
 }
 
-/* Footer Styles */
+
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #ffffff; /* Light footer */
-    color: #333; /* Dark text color */
+    background-color: #ffffff;
+    color: #333;
     position: relative;
     bottom: 0;
     width: 100%;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Dark Mode Specific Styles */
+
 body.dark-mode header {
-    background-color: #222; /* Dark header */
-    color: #ffffff; /* Light text color */
+    background-color: #222;
+    color: #ffffff;
 }
 
 body.dark-mode .sidebar {
-    background-color: #2c2c2c; /* Dark sidebar */
-    color: #ffffff; /* Light text color */
+    background-color: #2c2c2c;
+    color: #ffffff;
 }
 
 body.dark-mode .sidebar a {
-    color: #ffffff; /* Light text color */
+    color: #ffffff;
 }
 
 body.dark-mode .sidebar a:hover {
-    background-color: #444; /* Darker background on hover */
+    background-color: #444;
 }
 
 body.dark-mode .chart-container {
-    background-color: #2c2c2c; /* Dark background */
-    color: #ffffff; /* Light text color */
+    background-color: #2c2c2c;
+    color: #ffffff;
 }
 
 body.dark-mode .price-display,
 body.dark-mode .quantity-management {
-    background-color: #2c2c2c; /* Dark background */
-    color: #ffffff; /* Light text color */
+    background-color: #2c2c2c;
+    color: #ffffff;
 }
 
 body.dark-mode .quantity-controls input {
-    background-color: #555; /* Dark input background */
-    color: #ffffff; /* Light text color */
-    border: 1px solid #444; /* Dark border */
+    background-color: #555;
+    color: #ffffff;
+    border: 1px solid #444;
 }
 
 body.dark-mode .cart-items {
-    background-color: #333; /* Dark background */
-    border: 1px solid #444; /* Dark border */
-    color: #ffffff; /* Light text color */
+    background-color: #333;
+    border: 1px solid #444;
+    color: #ffffff;
 }
 
 body.dark-mode footer {
-    background-color: #222; /* Dark footer */
-    color: #ffffff; /* Light text color */
+    background-color: #222;
+    color: #ffffff;
 }
 
-/* Base Button Styles */
+
 button, .button {
-    background-color: #ffffff; /* Primary color */
-    color: #000000; /* Light text color */
+    background-color: #ffffff;
+    color: #000000;
     border: none;
     border-radius: 8px;
     padding: 10px 15px;
@@ -297,111 +319,111 @@ button, .button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Hover Effect for Buttons */
+
 button:hover, .button:hover {
-    background-color: #0056b3; /* Darker shade for hover */
-    transform: translateY(-2px); /* Slight lift on hover */
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
-/* Disabled Button Styles */
+
 button:disabled, .button:disabled {
-    background-color: #ccc; /* Greyed out */
+    background-color: #ccc;
     color: #666;
     cursor: not-allowed;
     box-shadow: none;
 }
 
-/* Secondary Button Styles */
+
 button.secondary, .button.secondary {
-    background-color: #6c757d; /* Secondary color */
+    background-color: #6c757d;
 }
 
 button.secondary:hover, .button.secondary:hover {
-    background-color: #5a6268; /* Darker shade for hover */
+    background-color: #5a6268;
 }
 
-/* Success Button Styles */
+
 button.success, .button.success {
-    background-color: #28a745; /* Success color */
+    background-color: #28a745;
 }
 
 button.success:hover, .button.success:hover {
-    background-color: #218838; /* Darker shade for hover */
+    background-color: #218838;
 }
 
-/* Danger Button Styles */
+
 button.danger, .button.danger {
-    background-color: #dc3545; /* Danger color */
+    background-color: #dc3545;
 }
 
 button.danger:hover, .button.danger:hover {
-    background-color: #c82333; /* Darker shade for hover */
+    background-color: #c82333;
 }
 
-/* Icon Button Styles */
+
 .icon-button {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
-    width: 40px; /* Fixed width for icon buttons */
-    height: 40px; /* Fixed height for icon buttons */
-    background-color: #f0f0f0; /* Light background */
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
     border: none;
-    border-radius: 50%; /* Circular buttons */
+    border-radius: 50%;
     transition: background-color 0.3s ease;
 }
 
-/* Hover Effect for Icon Buttons */
+
 .icon-button:hover {
-    background-color: #e0e0e0; /* Slightly darker on hover */
+    background-color: #e0e0e0;
 }
 
-/* Add any other specific button styles below */
+
 #addCrypto {
-    background-color: #28a745; /* Green color */
+    background-color: #28a745;
     color: white;
 }
 
 #addCrypto:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: scale(1.05); /* Slight grow effect */
+    background-color: #218838;
+    transform: scale(1.05);
 }
 
 #addCrypto:active {
-    background-color: #1e7e34; /* Even darker green on click */
-    transform: scale(0.95); /* Slight shrink effect on click */
+    background-color: #1e7e34;
+    transform: scale(0.95);
 }
 
-/* Sell Button (Red) */
+
 #removeCrypto {
-    background-color: #dc3545; /* Red color */
+    background-color: #dc3545;
     color: white;
 }
 
 #removeCrypto:hover {
-    background-color: #c82333; /* Darker red on hover */
-    transform: scale(1.05); /* Slight grow effect */
+    background-color: #c82333;
+    transform: scale(1.05);
 }
 
 #removeCrypto:active {
-    background-color: #bd2130; /* Even darker red on click */
-    transform: scale(0.95); /* Slight shrink effect on click */
+    background-color: #bd2130;
+    transform: scale(0.95);
 }
 
-/* Shift buttons down using padding */
+
 #addCrypto, #removeCrypto {
-    margin-top: 10px; /* Adjust this value to add space inside the button */
+    margin-top: 10px;
 }
 
-/* Styling for the price, market cap, and 24h change */
+
 .price-display div {
     text-align: left;
     font-size: 1.2em;
     margin-bottom: 10px;
 }
 
-/* Styling for the dropdown */
+
 #cryptoName {
     width: auto;
     padding: 10px;
@@ -421,7 +443,7 @@ button.danger:hover, .button.danger:hover {
     border-color: #333;
 }
 
-/* Styling for the quantity input */
+
 #cryptoQuantity {
     width: auto;
     padding: 10px;
@@ -439,67 +461,67 @@ button.danger:hover, .button.danger:hover {
     border-color: #333;
 }
 
-/* Ensures proper spacing between elements */
+
 .price-display {
     display: flex;
     flex-direction: column;
     gap:auto;
 }
 
-/* Cart Section (small portion under button when items are added) */
+
 .cart-dropdown {
-    display: none; /* Hidden by default */
+    display: none;
     position: absolute;
-    top: 65px; /* Adjust as necessary for positioning */
+    top: 65px;
     right: 10px;
-    width: 180px; /* Adjusted width for better spacing */
-    background-color: #f5f5f5; /* Subtle light background */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 10px; /* Rounded corners */
-    padding: 10px; /* Padding inside the cart */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    z-index: 999; /* Ensure the cart is on top */
+    width: 180px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
 }
 
-/* Show cart when hovering over the cart button or cart itself */
+
 .cart-container:hover .cart-dropdown,
 .cart-dropdown:hover {
-    display: block; /* Show the cart */
+    display: block;
 }
-/* Cart Items Styling */
+
 .cart-items {
-    max-height: 150px; /* Adjust height for fewer items */
-    overflow-y: auto; /* Scroll when items exceed container */
-    background-color: #ffffff; /* Light background */
-    padding: 5px; /* Reduced padding for the cart items container */
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    padding: 5px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for a floating effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Individual Cart Item Styling */
+
 .cart-item {
-    font-size: medium !important; /* Reduced font size for compactness */
-    padding: 3px 5px; /* Reduced padding for better spacing */
-    margin-bottom: 5px; /* Space between items */
+    font-size: medium !important;
+    padding: 3px 5px;
+    margin-bottom: 5px;
     display: flex;
-    justify-content: space-between; /* Align items side by side */
-    align-items: center; /* Center align the contents vertically */
-    border-bottom: 1px solid #ddd; /* Separation between items */
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
 }
 
-/* Cart Remove Button Styling */
+
 .remove-item {
-    background-color: #dc3545; /* Red for remove */
+    background-color: #dc3545;
     color: white;
     border: none;
-    padding: 3px 6px; /* Reduced padding */
+    padding: 3px 6px;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 0.7em; /* Reduced font size */
+    font-size: 0.7em;
 }
 
 .remove-item:hover {
-    background-color: #c82333; /* Darker red on hover */
+    background-color: #c82333;
 }
 
 #cartButton {
@@ -507,77 +529,77 @@ button.danger:hover, .button.danger:hover {
     cursor: pointer;
 }
 
-/* Navigation Bar Styles */
+
 .navbar {
     margin-top: 60px;
-    background-color: #ffffff; /* Light background for navbar */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    padding: 0px 20px; /* Preserved padding */
-    display: flex; /* Use flexbox for alignment */
-    justify-content: flex-end; /* Align items to the right */
-    border-radius: 8px; /* Rounded corners for a softer look */
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 0px 20px;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 8px;
 }
 
-/* Navbar List Styles */
+
 .navbar ul {
-    list-style-type: none; /* Remove default list styling */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
-    display: flex; /* Align items horizontally */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
 }
 
-/* Navbar List Item Styles */
+
 .navbar li {
-    margin-left: 25px; /* Space between nav items */
+    margin-left: 25px;
 }
 
-/* Navbar Link Styles */
+
 .navbar a {
-    text-decoration: none; /* Remove underline */
-    color: #333; /* Dark text color */
-    font-size: 16px; /* Font size for links */
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scale */
-    padding: 5px; /* Add padding to the link for better touch target */
-    border-radius: 5px; /* Rounded corners for links */
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 5px;
+    border-radius: 5px;
 }
 
-/* Navbar Link Hover Styles */
+
 .navbar a:hover {
-    color: #007bff; /* Change color on hover */
-    transform: translateY(-2px); /* Slight lift effect on hover */
+    color: #007bff;
+    transform: translateY(-2px);
 }
 
-/* Dark Mode Specific Styles for Navbar */
+
 body.dark-mode .navbar {
-    background-color: #2c2c2c; /* Dark background for navbar */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+    background-color: #2c2c2c;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 body.dark-mode .navbar a {
-    color: #ffffff; /* Light text color for links in dark mode */
+    color: #ffffff;
 }
 
 body.dark-mode .navbar a:hover {
-    color: #007bff; /* Keep hover color the same or adjust if needed */
-    transform: translateY(-2px); /* Slight lift effect on hover */
+    color: #007bff;
+    transform: translateY(-2px);
 }
 
 .sidebar-bottom {
-    background-color: var(--sidebar-bg-bottom); /* Ensure dark mode is applied */
+    background-color: var(--sidebar-bg-bottom);
     color: var(--sidebar-text);
 }
 
-/* Hover effects in dark mode */
+
 .sidebar-item:hover {
-    background-color: var(--sidebar-hover-bg); /* Darker background for hover */
-    color: var(--sidebar-hover-text); /* Contrast hover text */
-    transform: scale(1.05); /* Slightly larger on hover for better size handling */
+    background-color: var(--sidebar-hover-bg);
+    color: var(--sidebar-hover-text);
+    transform: scale(1.05);
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Variables for light and dark modes */
+
 :root {
-    /* Light mode colors */
+   
     --sidebar-bg: #ffffff;
     --sidebar-text: #333333;
     --sidebar-hover-bg: #f0f0f0;
@@ -586,7 +608,7 @@ body.dark-mode .navbar a:hover {
 }
 
 .dark-mode {
-    /* Dark mode colors */
+   
     --sidebar-bg: #2c2c2c;
     --sidebar-text: #e0e0e0;
     --sidebar-hover-bg: #1a1a1a;
@@ -594,15 +616,15 @@ body.dark-mode .navbar a:hover {
     --sidebar-bg-bottom: #1e1e1e;
 }
 
-/* Adding Dark Mode Variables */
+
 :root {
-    /* Light mode colors */
+   
     --sidebar-bg: #ffffff;
     --sidebar-text: #333;
     --sidebar-hover-bg: #e0e0e0;
     --sidebar-hover-text: #333;
 
-    /* Dark mode colors */
+   
     --sidebar-bg-dark: #2c2c2c;
     --sidebar-text-dark: #ffffff;
     --sidebar-hover-bg-dark: #444;
@@ -610,10 +632,10 @@ body.dark-mode .navbar a:hover {
     --sidebar-bottom-bg-dark: #181818;
 }
 
-/* Sidebar Styles for Light Mode */
+
 .sidebar {
-    background-color: var(--sidebar-bg); /* Light sidebar */
-    color: var(--sidebar-text); /* Dark text */
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
 }
 
 .sidebar a {
@@ -625,16 +647,16 @@ body.dark-mode .navbar a:hover {
     color: var(--sidebar-hover-text);
 }
 
-/* Sidebar Bottom Section */
+
 .sidebar-bottom {
     background-color: var(--sidebar-bg);
     color: var(--sidebar-text);
 }
 
-/* Dark Mode Sidebar Styles */
+
 body.dark-mode .sidebar {
-    background-color: var(--sidebar-bg-dark); /* Dark sidebar */
-    color: var(--sidebar-text-dark); /* Light text */
+    background-color: var(--sidebar-bg-dark);
+    color: var(--sidebar-text-dark);
 }
 
 body.dark-mode .sidebar a {
@@ -646,18 +668,18 @@ body.dark-mode .sidebar a:hover {
     color: var(--sidebar-hover-text-dark);
 }
 
-/* Dark Mode Sidebar Bottom */
+
 body.dark-mode .sidebar-bottom {
-    background-color: var(--sidebar-bottom-bg-dark); /* Dark bottom section */
-    color: var(--sidebar-text-dark); /* Light text */
+    background-color: var(--sidebar-bottom-bg-dark);
+    color: var(--sidebar-text-dark);
 }
 
-/* Hover effect for Bottom Section Buttons */
+
 body.dark-mode .sidebar-bottom .icon-button:hover {
     background-color: var(--sidebar-hover-bg-dark);
 }
 
-/* Adjust Hover Animation and Size for Bottom Section in Dark Mode */
+
 body.dark-mode .icon-button {
     transition: background-color 0.3s ease, transform 0.2s ease;
     color: var(--sidebar-text-dark);
@@ -666,13 +688,13 @@ body.dark-mode .icon-button {
 body.dark-mode .icon-button:hover {
     background-color: var(--sidebar-hover-bg-dark);
     color: var(--sidebar-hover-text-dark);
-    transform: scale(1.05); /* Slight enlarge effect on hover */
+    transform: scale(1.05);
 }
 
-/* Hover effects for closed sidebar */
+
 .sidebar:hover .sidebar-bottom .icon-button:hover {
     background-color: var(--sidebar-hover-bg);
-    transform: scale(1.05); /* Ensuring size fits properly */
+    transform: scale(1.05);
 }
 
 body.dark-mode .sidebar:hover .sidebar-bottom .icon-button:hover {
@@ -680,20 +702,20 @@ body.dark-mode .sidebar:hover .sidebar-bottom .icon-button:hover {
 }
 
 .header-buttons button {
-    margin: 0 5px; /* Adds space between the buttons */
-    padding: 10px; /* Adjusts padding */
-    border: none; /* Removes default border */
-    border-radius: 5px; /* Rounded corners */
-    background-color: #ffffff; /* Button color */
-    color: #007bff; /* Text color */
-    transition: background-color 0.3s ease; /* Transition effect */
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #007bff;
+    transition: background-color 0.3s ease;
 }
 
 .header-buttons button:hover {
-    background-color: #e0e0e0; /* Change color on hover */
+    background-color: #e0e0e0;
 }
 a {
-    text-decoration: none; /* Removes underline */
-    color: #ffffff; /* Default link color */
+    text-decoration: none;
+    color: #ffffff;
 }
 

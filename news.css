@@ -1,4 +1,4 @@
-/* Base styles */
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -10,13 +10,13 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark Mode */
+
 body.dark-mode {
     background-color: #181818;
     color: #e0e0e0;
 }
 
-/* Header styles */
+
 header {
     opacity: 1.;
     display: flex;
@@ -43,7 +43,7 @@ header h1 {
     flex: 1;
 }
 
-/* Navigation Bar Styles */
+
 .navbar {
     margin-top: 60px;
     background-color: #ffffff;
@@ -79,7 +79,7 @@ header h1 {
     transform: translateY(-2px);
 }
 
-/* News Container Styles */
+
 .news-container {
     display: flex;
     flex-wrap: wrap;
@@ -88,14 +88,14 @@ header h1 {
     padding: 0 20px;
 }
 
-/* News Item Styles */
+
 .news-item {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: 10px;
     overflow: hidden;
-    width: calc(33% - 40px); /* 3 items per row with margin */
+    width: calc(33% - 40px);
     position: relative;
 }
 
@@ -117,13 +117,13 @@ header h1 {
     margin: 0;
 }
 
-/* Pagination Styles */
+
 .pagination-container {
     text-align: center;
     margin: 20px 0;
 }
 
-/* Dark Mode Styles */
+
 body.dark-mode header {
     background-color: #222;
     color: #ffffff;
@@ -142,7 +142,7 @@ body.dark-mode .news-item h2 {
     color: #ffffff;
 }
 
-/* Additional styles for buttons, etc. can be added here */
+
 .news-container {
     display: flex;
     flex-wrap: wrap;
@@ -151,18 +151,18 @@ body.dark-mode .news-item h2 {
 }
 
 .news-item {
-    background-color: #ffffff; /* Use a dark background */
+    background-color: #ffffff;
     border-radius: 10px;
     padding: 20px;
-    width: 300px; /* Set a fixed width */
-    position: relative; /* For button positioning */
-    overflow: hidden; /* Prevent overflow */
+    width: 300px;
+    position: relative;
+    overflow: hidden;
 }
 
 .news-item img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 10px;
 }
 
 .news-title {
@@ -173,17 +173,17 @@ body.dark-mode .news-item h2 {
 
 .news-description {
     font-size: 0.9rem;
-    color: #ccc; /* Lighter text for contrast */
-    margin-bottom: 40px; /* Add space for the button */
+    color: #ccc;
+    margin-bottom: 40px;
 }
 
 .read-more {
-    position: absolute; /* Absolute position for bottom alignment */
-    bottom: 20px; /* Distance from the bottom */
+    position: absolute;
+    bottom: 20px;
     left: 50%;
-    transform: translateX(-50%); /* Center the button */
-    background-color: #007bff; /* Button background */
-    color: white; /* Button text color */
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -192,18 +192,18 @@ body.dark-mode .news-item h2 {
 }
 
 .read-more:hover {
-    background-color: #0056b3; /* Darker on hover */
+    background-color: #0056b3;
 }
 
 .news-description {
     font-size: 0.9rem;
-    color: transparent; /* Make text color transparent */
-    background: linear-gradient(white, transparent); /* Gradient effect */
-    -webkit-background-clip: text; /* For text clipping in WebKit browsers */
-    background-clip: text; /* Clip the background to the text */
-    margin-bottom: 40px; /* Add space for the button */
+    color: transparent;
+    background: linear-gradient(white, transparent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 40px;
 }
 a {
-    text-decoration: none; /* Removes underline */
-    color: #ffffff; /* Default link color */
+    text-decoration: none;
+    color: #ffffff;
 }
